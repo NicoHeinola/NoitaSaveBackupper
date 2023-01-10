@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" href="./css/views.css">
+    <script type="text/javascript" src="/eel.js"></script>
+</head>
+
+<body>
+
+    <nav>
+        <div class="TextBox">
+            <h1>Noita Backup Tool</h1>
+            <p>A simple tool for backing up Noita-worlds</p>
+        </div>
+        <div class="Links">
+            <div onclick="changeView(this, 'saveview')" class="Link ImageText Active">
+                <img alt="Save Icon" src="./images/icons/save.png">
+                <p>Create a new backup</p>
+            </div>
+            <div onclick="changeView(this, 'selectview')" class="Link ImageText">
+                <img alt="Load Icon" src="./images/icons/load.png">
+                <p>Select backup</p>
+            </div>
+        </div>
+    </nav>
+    <div class="Views">
+        <div id="saveview" class="InstantAnimation AnimateIn View TextBox">
+            <div class="SimpleInput">
+                <input id="saveworldname" required class="Input" type="text">
+                <label>Type a name</label>
+            </div>
+            <div class="BelowItem">
+                <p>Description</p>
+                <textarea id="saveworlddesc" placeholder="Something to remember the world for"></textarea>
+            </div>
+            <button onclick="onSaveWorld()">Create backup</button>
+        </div>
+        <div id="selectview" class="InstantAnimation AnimateOut View TextBox">
+            <div class="SimpleInput">
+                <select onchange="onBackupSelect();" id="backupSelect" required class="Input" id="backupSelect">
+                </select>
+                <label>Select a World</label>
+            </div>
+            <div class="SimpleInput">
+                <input id="editworldname" required class="Input" type="text">
+                <label>Type a name</label>
+            </div>
+            <div class="BelowItem">
+                <p>Description</p>
+                <textarea id="editworlddesc" placeholder="Something to remember the world for"></textarea>
+            </div>
+            <div class="RowBox">
+                <button onclick="onLoadWorld()">Load</button>
+                <button onclick="onModifyBackup()">Modify</button>
+                <button onclick="onRemoveBackup()">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/eelFunctions.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/nav.js"></script>
+    <!--a target="_blank" href="https://icons8.com/icon/18765/save">Save</a> icon by <a target="_blank"
+        href="https://icons8.com">Icons8</a>
+        <a target="_blank" href="https://icons8.com/icon/22090/spinner">Spinner</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+    -->
+</body>
+
+</html>

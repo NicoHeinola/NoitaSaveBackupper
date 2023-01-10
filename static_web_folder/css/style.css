@@ -1,0 +1,175 @@
+@font-face {
+    font-family: noitaFont;
+    src: url("../fonts/NoitaBlackletter-Regular.ttf");
+}
+
+
+* {
+    box-sizing: border-box;
+    position: relative;
+    font-family: noitaFont;
+    font-size: 20px;
+    font-weight: normal;
+    letter-spacing: 1.5px;
+}
+
+:root {
+    --textColor: white;
+    --noitaColor: #FF9C08;
+    --bg: rgb(53, 53, 53);
+    --navColor: rgb(34, 34, 34);
+    --linkColor: rgb(112, 112, 112);
+    --linkHoverColor: rgb(230, 230, 230);
+    --linkActiveColor: #FF9C08;
+    --buttonColor: #005fdb;
+    --buttonHoverColor: #006eff;
+    --buttonClickColor: #2d88ff;
+}
+
+body, p, h1, h2, h3, h4, h5, h6, a {
+    margin: 0;
+    color: var(--textColor);
+    text-shadow: 2px 2px 5px black;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100vh;
+    font-size: 16px;
+    background-color: var(--bg);
+}
+
+h1 {
+    font-size: 40px;
+    color: var(--noitaColor);
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+/* Forms */
+
+textarea {
+    box-shadow: 2px 2px 5px 0px black;
+}
+
+option {
+    background: var(--navColor);
+}
+
+input, button, textarea, select {
+    background: none;
+    border: none;
+    color: var(--textColor);
+    min-width: 150px;
+}
+
+button, input[type="button"], input[type="submit"] {
+    min-width: 120px;
+    height: 40px;
+    padding: 0 20px;
+    background: var(--buttonColor);
+    border-radius: 50px;
+    transition: background-color 0.1s;
+    box-shadow: 2px 2px 6px 0px black;
+}
+
+button:hover {
+    background: var(--buttonHoverColor);
+}
+
+button:active {
+    background: var(--buttonClickColor);
+    transition-duration: 0s;
+}
+
+textarea {
+    height: 150px;
+    width: 300px;
+    padding: 10px;
+    resize: none;
+}
+
+input:focus, button:focus, textarea:focus, select:focus {
+    outline: none;
+}
+
+/* Simple elements */
+.TextBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.ImageText {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ImageText > img {
+    height: 100%;
+    filter: grayscale(1) invert(0.7);
+}
+
+.BelowItem {
+    display: flex;
+    flex-direction: column;
+}
+
+.BelowItem > * {
+    margin: 5px 0;
+}
+
+.RowBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.RowBox > * {
+    margin: 0 5px;
+}
+
+/* SimpleInput */
+
+.SimpleInput {
+    margin-top: 245px;
+}
+
+.SimpleInput > .Input {
+    width: 100%;
+    height: 100%;
+}
+
+.SimpleInput::after {
+    content: " ";
+    display: block;
+    width: 100%;
+    height: 5px;
+    background: var(--navColor);
+    box-shadow: 2px 2px 2px 0px black;
+}
+
+.SimpleInput > label {
+    position: absolute;
+    left: 0;
+    bottom: 7px;
+    transition: all 0.2s;
+    pointer-events: none;
+}
+
+.SimpleInput > .Input:focus ~ label, .SimpleInput > .Input:valid ~ label {
+    transform: translateY(calc(-100% - 5px));
+    font-size: 16px;
+}

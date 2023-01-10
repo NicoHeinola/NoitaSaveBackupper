@@ -1,0 +1,55 @@
+.View.Hidden {
+    display: none;
+}
+
+.Views {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.View {
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    padding: 25px 0;
+}
+.View > * {
+    margin-top: 40px;
+}
+
+.InstantAnimation {
+    animation-duration: 0s !important;
+}
+
+.AnimateOut {
+    animation-name: view_animation_out;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.AnimateIn {
+    animation-name: view_animation_in;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes view_animation_out {
+    0% {
+        top: 0%;
+    }
+    100% {
+        top: 100%;
+    }
+}
+
+@keyframes view_animation_in {
+    0% {
+        top: -100%;
+    }
+    100% {
+        top: 0%;
+    }
+}

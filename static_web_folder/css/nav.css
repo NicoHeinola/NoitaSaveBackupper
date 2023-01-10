@@ -1,0 +1,39 @@
+nav {
+    min-width: 370px;
+    height: 100vh;
+    padding: 50px 0;
+    background: var(--navColor);
+}
+
+nav *::selection {
+    background: none;
+}
+
+nav .Links {
+    width: 100%;
+    margin-top: 50px;
+}
+
+nav .Link {
+    height: 40px;
+    margin: 30px auto;
+    width: 60%;
+    text-align: center;
+}
+
+nav .Link>* {
+    color: var(--linkColor);
+    transition: color 0.1s;
+}
+
+nav .Link:hover {
+    cursor: pointer;
+}
+
+nav .Link:hover>* {
+    color: var(--linkHoverColor);
+}
+
+nav .Link.Active>* {
+    color: var(--linkActiveColor);
+}
